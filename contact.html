@@ -44,14 +44,15 @@
 
         <!-- RIGHT FORM -->
         <div class="contact-form">
-
             <h2>Get in Touch</h2>
+            <form id="contactform">
+                <input type="text" id="name1" placeholder="Full Name">
+                <input type="email" id="email1" placeholder="Email Address">
+                <input type="text" id="subject1" placeholder="Subject">
 
-            <form>
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <input type="text" placeholder="Subject">
-                <textarea placeholder="Your Message" rows="5"></textarea>
+                <textarea id="message1" placeholder="Your Message"></textarea>
+
+                <p class="form-msg" id="formMsg"></p>
 
                 <button type="submit">Send Message</button>
             </form>
@@ -212,6 +213,40 @@
                 form.reset();
             }
         });
+
+        const contactform = document.getElementById("contactform");
+        const msg = document.getElementById("formMsg");
+
+        contactform.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name1").value.trim();
+            const email = document.getElementById("email1").value.trim();
+            const subject = document.getElementById("subject1").value.trim();
+            const message = document.getElementById("message1").value.trim();
+
+            // Email regex
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (name === "" || email === "" || message === "") {
+                showError("Please fill all required fields");
+            }
+            else if (!email.match(emailPattern)) {
+                showError("Please enter a valid email");
+            }
+            else {
+                msg.classList.remove("error");
+                msg.classList.add("success");
+                msg.innerText = "✅ Thanku for contacting us. we will get back to shortly";
+                 contactform.reset();
+            }
+        });
+
+        function showError(text) {
+            msg.classList.remove("success");
+            msg.classList.add("error");
+            msg.innerText = text;
+        }
     </script>
 
 </body>

@@ -19,12 +19,24 @@ a {
 /* Navbar */
 
 .navbar {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 50px;
     background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); */
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    align-items: center;
+    padding: 5px 50px;
+    width: 100%;
+    z-index: 1000;
+    background: white;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
 }
 
 nav a {
@@ -510,6 +522,7 @@ nav a {
     align-items: center;
     justify-content: space-between;
     padding: 50px;
+    margin-top: 77px;
 }
 
 .hero-left {
@@ -1007,6 +1020,7 @@ p {
     padding: 50px 20px;
     background: linear-gradient(135deg, #1f7a4d, #22c55e);
     color: white;
+    margin-top: 77px;
 }
 
 .banner h1 {
@@ -1409,7 +1423,7 @@ button:hover {
 /* ERROR */
 .error {
     color: #ff4d4d;
-    font-size: 14px;
+    font-size: 14px !important;
     min-height: 20px;
 }
 
@@ -1544,7 +1558,7 @@ button:hover {
 /* ERROR */
 .error {
     color: #ff4d4d;
-    font-size: 13px;
+    font-size: 13px !important;
     min-height: 18px;
 }
 

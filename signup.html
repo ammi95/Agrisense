@@ -13,7 +13,7 @@
     <div class="signup-container">
 
         <div class="signup-card" id="signupCard">
-           <a href="/"><img src="assets/images/logo.png" alt="logo"></a>
+            <a href="/"><img src="assets/images/logo.png" alt="logo"></a>
             <p>Create your account</p>
 
             <form id="signupForm">
@@ -34,7 +34,7 @@
                     <span class="toggle" onclick="togglePassword('password')">👁️</span>
                 </div>
 
-                <div class="input-box">
+                <div class="input-box" style="margin: 0;">
                     <input type="password" id="confirmPassword" required>
                     <label>Confirm Password</label>
                     <span class="toggle" onclick="togglePassword('confirmPassword')">👁️</span>
@@ -53,6 +53,49 @@
         </div>
 
     </div>
+    <script>
+        const form = document.getElementById("signupForm");
+        const errorMsg = document.getElementById("errorMsg");
+        const card = document.getElementById("signupCard");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirm = document.getElementById("confirmPassword").value;
+
+            if (name === "" || email === "" || password === "" || confirm === "") {
+                showError("All fields are required");
+            }
+            else if (password.length < 6) {
+                showError("Password must be at least 6 characters");
+            }
+            else if (password !== confirm) {
+                showError("Passwords do not match");
+            }
+            else {
+                errorMsg.style.color = "#22c55e";
+                errorMsg.innerText = "✅ Account created successfully!";
+                form.reset();
+            }
+        });
+
+        function showError(msg) {
+            errorMsg.style.color = "#ff4d4d";
+            errorMsg.innerText = msg;
+
+            card.classList.add("shake");
+            setTimeout(() => card.classList.remove("shake"), 300);
+        }
+
+        /* TOGGLE PASSWORD */
+        function togglePassword(id) {
+            const field = document.getElementById(id);
+            field.type = field.type === "password" ? "text" : "password";
+        }
+    </script>
 
 </body>
 

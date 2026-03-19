@@ -57,6 +57,7 @@
                 errorMsg.innerText = "Login successful!";
             } else {
                 errorMsg.innerText = "Invalid credentials";
+                form.reset();
 
                 // Shake animation
                 card.classList.add("shake");
