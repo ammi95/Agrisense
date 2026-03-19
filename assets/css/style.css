@@ -967,6 +967,7 @@ p {
     font-size: 26px;
     font-weight: bold;
 }
+
 .countdown p {
     margin-bottom: 0;
 }
@@ -998,4 +999,597 @@ p {
 
 .subscribe button:hover {
     background: #e6f5ee;
+}
+
+/* technology section css */
+.banner {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #1f7a4d, #22c55e);
+    color: white;
+}
+
+.banner h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* TECH STACK */
+.tech {
+    position: relative;
+    padding: 20px 50px;
+}
+
+.tech h2 {
+    text-align: center;
+
+}
+
+.gird {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: #8e8e8e1a;
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card i {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #2E7D32;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+/* ARCHITECTURE */
+.architecture {
+    text-align: center;
+    padding: 60px 20px;
+    background: #e3e3e3;
+}
+
+.flow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* NODES */
+.node {
+    background: white;
+    color: #1f7a4d;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* ARROWS */
+.arrow {
+    width: 50px;
+    height: 2px;
+    background: #22c55e;
+    position: relative;
+    animation: flow 1s infinite linear;
+}
+
+.arrow::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: -4px;
+    border-left: 8px solid #22c55e;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+
+/* ANIMATION */
+@keyframes flow {
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+
+/* pricing page css */
+.toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ccc;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked+.slider {
+    background: #22c55e;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+/* PRICING */
+.pricing {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+
+.pricing .card {
+    background: #86868650;
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 16px;
+    width: 280px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.card.popular {
+    background: #ffffff50;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.popular {
+    border: 2px solid #2E7D32;
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2E7D32;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.price {
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+.price span {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #2E7D32;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #16a34a;
+}
+
+/* contact page css */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    gap: 30px;
+    align-items: center;
+}
+
+.contact-image {
+    flex: 1;
+}
+
+.contact-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.contact-form {
+    flex: 1;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.contact-form button {
+    padding: 12px;
+    background: #1f7a4d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* INFO CARDS */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap;
+    background: #ededed;
+}
+
+.info-card {
+    background: #2E7D32;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    width: 300px;
+    color: #ffff;
+}
+
+.info-card img {
+    width: 24px;
+    margin-bottom: 10px;
+    filter: invert(1);
+}
+
+.info-card h3 {
+    margin-bottom: 10px;
+}
+
+/* MAP */
+.map iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+}
+
+/* .login page css */
+.login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: url(../images/login.jpg) no-repeat center center/cover;
+    height: 100vh;
+}
+
+/* CARD */
+.login-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 16px;
+    width: 400px;
+    text-align: center;
+    color: white;
+    animation: fadeIn 0.6s ease;
+    margin: 30px;
+}
+
+.login-card p {
+    font-size: 24px;
+}
+
+/* INPUT */
+.input-box {
+    position: relative;
+    margin: 20px 0;
+    margin-bottom: 30px;
+}
+
+
+.input-box input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+}
+
+.input-box label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    color: #555;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+/* FLOAT LABEL */
+.input-box input:focus+label,
+.input-box input:valid+label {
+    top: -18px;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #2E7D32;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #16a34a;
+}
+
+/* ERROR */
+.error {
+    color: #ff4d4d;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SHAKE */
+.shake {
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.signup-text {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ddd;
+}
+
+.signup-text a {
+    color: #22c55e;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+/* popup css */
+/* BUTTON */
+.demo-btn {
+    padding: 12px 22px;
+    background: #22c55e;
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* BACKDROP */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* MODAL */
+.modal-content {
+    background: #ffffff;
+    /* backdrop-filter: blur(15px); */
+    padding: 30px;
+    border-radius: 16px;
+    width: 500px;
+    color: #000000;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+    position: relative;
+}
+
+/* CLOSE */
+.close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* FORM */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.modal-content input {
+    padding: 12px;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    outline: none;
+}
+
+.modal-content button {
+    padding: 12px;
+    background: #22c55e;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ERROR */
+.error {
+    color: #ff4d4d;
+    font-size: 13px;
+    min-height: 18px;
+}
+
+/* SUCCESS */
+.success {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* SHAKE */
+.shake {
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-6px);
+    }
+
+    50% {
+        transform: translateX(6px);
+    }
+
+    75% {
+        transform: translateX(-6px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }

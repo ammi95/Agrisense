@@ -13,18 +13,18 @@
     <!-- Navbar -->
     <header class="navbar">
         <div class="logo">
-           <a href="/"><img src="assets/images/logo.png" alt=""></a> 
+            <a href="/"><img src="assets/images/logo.png" alt=""></a>
         </div>
         <nav>
             <a href="#features">Features</a>
-            <a href="comming-soon.html">Technology</a>
+            <a href="technology.html">Technology</a>
             <a href="#dashboard">Dashboard</a>
-            <a href="comming-soon.html">Pricing</a>
-            <a href="comming-soon.html">Contact</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
         </nav>
         <div class="nav-btns">
-            <a href="javascript:void(0)" class="login">Login</a>
-            <a href="javascript:void(0)" class="demo">Get Demo</a>
+            <a href="login.html" class="login">Login</a>
+            <a href="javascript:void(0)" class="demo" onclick="openModal()">Get Demo</a>
         </div>
     </header>
 
@@ -39,7 +39,7 @@
                 using smart IoT sensors and a powerful dashboard.
             </p>
             <div class="hero-buttons">
-                <a href="javascript:void(0)" class="primary">Get Demo</a>
+                <a href="javascript:void(0)" onclick="openModal()" class="primary">Get Demo</a>
                 <a href="javscript:void(0)" class="secondary">View Dashboard</a>
             </div>
         </div>
@@ -366,8 +366,8 @@
                 Monitor your farm in real time and make better decisions with AgriSense.
             </p>
             <div class="cta-buttons">
-                <a href="#" class="btn-primary">Request Demo</a>
-                <a href="#" class="btn-secondary">Contact Sales</a>
+                <a href="javascript:void(0)" onclick="openModal()" class="btn-primary">Request Demo</a>
+                <a href="contact.html" class="btn-secondary">Contact Sales</a>
             </div>
         </div>
     </section>
@@ -391,7 +391,7 @@
                 <ul>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#dashboard">Dashboard</a></li>
-                    <li><a href="#">Sensors</a></li>
+                    <li><a href="technology.html">Technology</a></li>
                 </ul>
             </div>
 
@@ -399,9 +399,8 @@
             <div class="footer-col">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="comming-soon.html">About</a></li>
-                    <li><a href="comming-soon.html">Careers</a></li>
-                    <li><a href="comming-soon.html">Contact</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
 
@@ -409,9 +408,8 @@
             <div class="footer-col">
                 <h4>Resources</h4>
                 <ul>
-                    <li><a href="comming-soon.html">Documentation</a></li>
-                    <li><a href="comming-soon.html">Blog</a></li>
-                    <li><a href="comming-soon.html">Support</a></li>
+                    <li><a href="/">Documentation</a></li>
+                    <li><a href="contact.html">Support</a></li>
                 </ul>
             </div>
             <!-- Social -->
@@ -431,6 +429,72 @@
         </div>
 
     </footer>
+    <div class="modal" id="demoModal">
+
+        <div class="modal-content" id="modalBox">
+
+            <span class="close" onclick="closeModal()">&times;</span>
+
+            <h2>Request a Demo</h2>
+            <p>See how AgriSense can transform your farm.</p>
+
+            <form id="demoForm">
+
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <input type="text" placeholder="Farm Size / Location">
+
+                <p class="error" id="formError"></p>
+
+                <button type="submit">Submit Request</button>
+
+            </form>
+
+        </div>
+
+    </div>
+    <script>
+        const modal = document.getElementById("demoModal");
+        const form = document.getElementById("demoForm");
+        const error = document.getElementById("formError");
+        const box = document.getElementById("modalBox");
+
+        function openModal() {
+            document.getElementById("demoModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("demoModal").style.display = "none";
+        }
+
+        /* close outside */
+        window.onclick = function (e) {
+            const modal = document.getElementById("demoModal");
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        /* FORM VALIDATION */
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+
+            if (name === "" || email === "") {
+                error.innerText = "Please fill all required fields";
+
+                box.classList.add("shake");
+                setTimeout(() => box.classList.remove("shake"), 300);
+            } else {
+                error.classList.add("success");
+                error.innerText = "✅ Request submitted successfully!";
+
+                form.reset();
+            }
+        });
+    </script>
 
 </body>
 
