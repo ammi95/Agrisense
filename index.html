@@ -442,7 +442,7 @@
 
                 <input type="text" id="name" placeholder="Full Name" required>
                 <input type="email" id="email" placeholder="Email Address" required>
-                <input type="text" placeholder="Farm Size">
+                <input type="text" id="farm" placeholder="Farm Size" required>
 
                 <p class="error" id="formError"></p>
 
@@ -503,6 +503,9 @@
             } else {
                 nav.style.background = "#ffffff";
             }
+        });
+         document.getElementById("farm").addEventListener("input", function () {
+            this.value = this.value.replace(/[^0-9]/g, "");
         });
     </script>
 
